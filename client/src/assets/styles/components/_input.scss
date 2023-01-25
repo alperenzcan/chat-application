@@ -1,0 +1,17 @@
+.input {
+  font-size: $default-font-size;
+
+  & label {
+    font-size: inherit;
+  }
+
+  & input {
+    border: none;
+    border-bottom: 1px solid $color-light-1;
+    padding: .5rem 1rem;
+    color: $color-light-1;
+    font-size: inherit;
+    outline: none;
+    background-color: transparent;
+  }
+}

@@ -20,11 +20,12 @@ const Login = () => {
   }
 
   return (
-    <div className='login-wrapper'>
-      <div className='login'>
-        <h2 className='heading-secondary'>LOGIN</h2>
-        <Input label='Username' placeholder='Your username*' onChange={e => setUsername(e.target.value)} />
-        <Button text='login' onClick={onClickLogin} />
+    <div className='login'>
+      <div className='login__box'>
+        <div>
+          <h2 className='heading-secondary'>LOGIN</h2>
+          <Input />
+        </div>
       </div>
     </div>
   )
