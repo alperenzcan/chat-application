@@ -23,7 +23,6 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  color: #000;
 }
 
 html {
@@ -32,72 +31,10 @@ html {
 
 body {
   box-sizing: border-box;
+  background-color: #20222f;
 }
 
 .heading-secondary {
   font-size: 3rem;
   margin-bottom: 1rem;
-}
-
-.login-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100wv;
-  height: 100vh;
-}
-
-.login {
-  text-align: center;
-}
-
-.app {
-  position: relative;
-}
-
-.button {
-  padding: 1rem 2rem;
-  border: none;
-  margin: 1rem 1rem;
-  cursor: pointer;
-  background-color: #c4b7a7;
-  transition: all 0.2s;
-  transform: translateY(0);
-  font-size: 1.6rem;
-  letter-spacing: 1px;
-}
-.button:hover {
-  transform: translateY(-3px);
-}
-.button:active {
-  transform: translateY(-1px);
-}
-
-.chatroom {
-  min-height: 100vh;
-  border: 1px solid #51474b;
-}
-.chatroom__chatbox {
-  min-height: 80vh;
-  width: 100%;
-  padding: 5rem 5rem;
-  border: 1px solid black;
-}
-
-.input {
-  font-size: 1.6rem;
-  width: 15vw;
-}
-.input label {
-  display: block;
-  text-align: left;
-  padding: 1rem 0;
-}
-.input input {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid black;
-  padding: 1rem 0;
-  width: 100%;
 }/*# sourceMappingURL=main.css.map */
