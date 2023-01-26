@@ -20,13 +20,23 @@ public class DataInitializor implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		User user = new User();
-		user.setUsername("username01");
-		user.setPassword("P4ssword");
-		User savedUser = userRepository.save(user);
+		User user1 = new User();
+		user1.setUsername("alperen");
+		user1.setPassword("P4ssword");
+		User savedUser1 = userRepository.save(user1);
+		
+		User user2 = new User();
+		user2.setUsername("emre");
+		user2.setPassword("P4ssword");
+		User savedUser2 = userRepository.save(user2);
+		
+		User user3 = new User();
+		user3.setUsername("tolga");
+		user3.setPassword("P4ssword");
+		User savedUser3 = userRepository.save(user3);
 		
 		Message message = new Message();
-		message.setSender(savedUser);
+		message.setSender(savedUser1);
 		message.setText("Message text");
 		messageRepository.save(message);
 	}

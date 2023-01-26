@@ -10,6 +10,6 @@ public class AuthResponse {
 
 	private String token;
 	
-	@JsonIgnoreProperties({"password","messages"})
+	@JsonIgnoreProperties({"password","messages","createDate","lastModifiedDate"})
 	private User user;
 }

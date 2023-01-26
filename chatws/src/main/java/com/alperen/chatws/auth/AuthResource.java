@@ -13,7 +13,7 @@ public class AuthResource {
 	@Autowired
 	private AuthService authService;
 	
-	@PostMapping
+	@PostMapping("/v1.0/auth")
 	AuthResponse handleAuthentication(@RequestBody Credentials credentials){
 		return authService.authenticate(credentials);
 	}
