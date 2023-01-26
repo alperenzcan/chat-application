@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux'
 import SockJS from 'sockjs-client'
 import { over } from 'stompjs'
 import Button from './Button';
+import ChatList from './ChatList';
 import Input from './Input';
+import MessageBoxView from './MessageBoxView';
 
 var stompClient = null;
 
@@ -60,27 +62,15 @@ const Chatroom = () => {
 
   return (
     <>
-      {
-        userData.connected ?
-          <div className='chatroom'>
-            <h2 className='heading-secondary'>Chatroom</h2>
-            <div className='chatroom__chatbox'>
-              {
-                chats.map(chat => (
-                  <div>
-                    {chat.message}
-                  </div>
-                ))
-              }
-            </div>
-            <div className='d-flex align-items-center justify-content-end'>
-              <Input placeholder='your message' onChange={e => setUserData({ ...userData, message: e.target.value })} />
-              <Button text='send' onClick={sendPublicMessage} />
-            </div>
-          </div>
-          :
-          null
-      }
+    <div className='row'>
+      <div className='col-4 chat-list'>
+        
+      <ChatList/>
+      </div>
+      <div className='col-8 message-box'>
+      <MessageBoxView messages=''/>
+      </div>
+    </div>
 
     </>
   )

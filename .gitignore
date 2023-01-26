@@ -1,3 +1,10 @@
 /.metadata/
+<<<<<<< Updated upstream
 client/src/assets/styles/main.css
 client/src/assets/styles/main.css.map
+=======
+*.map
+client/src/assets/styles/main.css.map
+client/src/assets/styles/main.css
+client/src/assets/styles/main.scss
+>>>>>>> Stashed changes

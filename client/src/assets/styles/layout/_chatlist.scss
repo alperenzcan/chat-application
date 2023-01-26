@@ -1,0 +1,81 @@
+
+.chat-list{
+    background-color: rgb(90, 152, 152);
+    background-color: $color-dark-1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh   ;
+    font-size: 2rem;
+    border-right: .5px $color-gray-1 solid;
+
+    margin: 0!important;
+    padding: 0!important;
+    //TODO
+    color: white;
+    font-family: sans-serif;
+
+    &__item{
+        display: flex;
+        height: 7rem;  
+        border-radius: .5rem;
+        align-items: center;
+        
+        &:hover{
+            background-color: $color-dark-3;
+        }
+        &:focus{
+            background-color: $color-dark-3;
+        }
+        &__img{
+            border-radius: 2.5rem;
+            height: 4rem;
+            width: 4rem;
+        }
+        &__info{
+            padding: 1rem 1rem;
+            flex-grow: 1;
+            align-self: stretch;
+            border-bottom: .5px $color-gray-1 solid;
+        }
+        &__header{
+            font-size: 2rem;
+            padding-bottom:.5rem ;
+        }
+        &__text{
+            font-size: 1.5rem;
+            font-weight: 100;
+        }
+        &__time{
+            align-self: flex-start;
+            align-self: stretch;
+            color: $color-gray-1;
+            font-size: 1.5rem;
+            padding: 1rem;
+            margin-right: .5rem;
+            border-bottom: .5px $color-gray-1 solid;
+        }
+    }
+    &__search-input{
+        margin: 1rem .5rem;
+    }
+
+    &__search-input input{
+        border: none;
+        padding-left: 1rem;
+        background-color: $color-dark-3;
+        width: 100%;
+        border-radius: .5rem;
+        line-height: 3rem;
+        font-size: 1.8rem;
+        outline: none;
+    }
+}
+
+.profile-nav{
+    background-color: $color-red-1;
+    height: 5rem;
+    border-start-start-radius: 1rem;
+    border-end-start-radius: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
