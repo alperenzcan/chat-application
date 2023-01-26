@@ -3,6 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import './assets/styles/main.css';
 import Chatroom from './components/Chatroom';
 import Login from './components/Login';
+import RequiredAuth from './routes/RequiredAuth';
+import RequiredNoAuth from './routes/RequiredNoAuth';
+
 
 function App() {
 
@@ -11,8 +14,19 @@ function App() {
   return (
     <div className='app container'>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/chat' element={<Chatroom />} />
+
+        {/* REQUIRED NO AUTH */}
+        <Route element={<RequiredNoAuth />}>
+          <Route path='/login' element={<Login />} />
+        </Route>
+
+        {/* REQUIRED AUTH */}
+        <Route element={<RequiredAuth />}>
+          <Route path='/' element={<Chatroom />} />
+        </Route>
+        <Route element={<RequiredAuth />}>
+          <Route path='/chat' element={<Chatroom />} />
+        </Route>
       </Routes>
     </div>
   );

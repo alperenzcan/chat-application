@@ -11,66 +11,66 @@ var stompClient = null;
 
 const Chatroom = () => {
 
-  const user = useSelector(state => state.user.value)
-  const { username } = user
+  // const user = useSelector(state => state.user.value)
+  // const { username } = user
 
-  const [userData, setUserData] = useState({ ...user })
-  const [chats, setChats] = useState([])
+  // const [userData, setUserData] = useState({ ...user })
+  // const [chats, setChats] = useState([])
 
-  useEffect(() => {
-    console.log(userData)
-    if (username !== '') {
-      registerUser()
-    }
-  }, [])
+  // useEffect(() => {
+  //   console.log(userData)
+  //   if (username !== '') {
+  //     registerUser()
+  //   }
+  // }, [])
 
 
-  const registerUser = (event) => {
-    let Sock = new SockJS('http://45.93.137.231:8080/ws');
-    stompClient = over(Sock);
-    stompClient.connect({}, onConnected, onError)
-  }
+  // const registerUser = (event) => {
+  //   let Sock = new SockJS('http://45.93.137.231:8080/chat');
+  //   stompClient = over(Sock);
+  //   stompClient.connect({}, onConnected, onError)
+  // }
 
-  const onConnected = () => {
-    setUserData({ ...userData, connected: true })
-    stompClient.subscribe('/chatroom/public', onPublicMessageReceived);
+  // const onConnected = () => {
+  //   setUserData({ ...userData, connected: true })
+  //   stompClient.subscribe('/chatroom/public', onPublicMessageReceived);
 
-  }
+  // }
 
-  const onPublicMessageReceived = (payload) => {
-    console.log(JSON.parse(payload.body))
-    let payloadData = JSON.parse(payload.body);
-    chats.push(payloadData)
-    setChats([...chats])
+  // const onPublicMessageReceived = (payload) => {
+  //   console.log(JSON.parse(payload.body))
+  //   let payloadData = JSON.parse(payload.body);
+  //   chats.push(payloadData)
+  //   setChats([...chats])
 
-  }
+  // }
 
-  const onError = (err) => {
-    // console.log(err)
-  }
+  // const onError = (err) => {
+  //   // console.log(err)
+  // }
 
-  const sendPublicMessage = () => {
-    if (stompClient) {
-      let chatMessage = {
-        sender: userData.username,
-        message: userData.message
-      }
-      stompClient.send('/app/message', {}, JSON.stringify(chatMessage));
-      setUserData({ ...userData, 'message': '' });
-    }
-  }
+  // const sendPublicMessage = () => {
+  //   if (stompClient) {
+  //     let chatMessage = {
+  //       sender: userData.username,
+  //       message: userData.message
+  //     }
+  //     stompClient.send('/message-destination/message', {}, JSON.stringify(chatMessage));
+  //     setUserData({ ...userData, 'message': '' });
+  //   }
+  // }
 
   return (
     <>
-    <div className='row'>
-      <div className='col-4 chat-list'>
-        
-      <ChatList/>
+      <div className='row'>
+        <div className='col-4 chat-list'>
+
+          <ChatList />
+        </div>
+        <div className='col-8 message-box'>
+          <MessageBoxView messages='' />
+        </div>
       </div>
-      <div className='col-8 message-box'>
-      <MessageBoxView messages=''/>
-      </div>
-    </div>
 
     </>
   )

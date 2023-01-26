@@ -266,7 +266,6 @@ body {
   font-size: inherit;
   outline: none;
   background-color: transparent;
-<<<<<<< Updated upstream
   letter-spacing: 2px;
 }
 
@@ -289,7 +288,6 @@ body {
 }
 .btn--animated:active {
   transform: translateY(-1px);
-=======
 }
 
 .anan {
@@ -298,7 +296,7 @@ body {
 
 .chat-list {
   background-color: rgb(90, 152, 152);
-  background-color: #20222f;
+  background-color: #1d1f2b;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -379,7 +377,7 @@ body {
 }
 
 .message-box {
-  background-color: #1d1f2b;
+  background-color: #20222f;
   padding: 0 !important;
   height: 100vh;
 }
@@ -453,5 +451,4 @@ body {
   padding-left: 1rem;
   margin-bottom: -0.5rem;
   font-weight: 500;
->>>>>>> Stashed changes
 }/*# sourceMappingURL=main.css.map */

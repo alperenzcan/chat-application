@@ -1,10 +1,13 @@
-package com.alperen.chatws.user;
+package com.alperen.chatws.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+
+import com.alperen.chatws.user.User;
+import com.alperen.chatws.user.UserRepository;
 
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {

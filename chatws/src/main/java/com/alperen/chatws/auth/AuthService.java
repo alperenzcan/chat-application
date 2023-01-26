@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.alperen.chatws.error.NotFoundException;
 import com.alperen.chatws.user.User;
-import com.alperen.chatws.user.UserDetailsImpl;
 import com.alperen.chatws.user.UserRepository;
 
 import io.jsonwebtoken.Claims;

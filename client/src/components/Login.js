@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { login } from '../api/authCalls'
+import { loginAction } from '../redux/feature/authSlice'
 import Button from './Button'
 import Input from './Input'
 
@@ -11,6 +13,10 @@ const Login = () => {
   const dispatch = useDispatch()
   const nav = useNavigate()
 
+  const auth = useSelector(state => state.auth.value)
+
+  const { user, isLoggedIn } = auth
+
   const onChange = (e) => {
     const { value, name } = e.target
     setForm({ ...form, [name]: value })
@@ -18,7 +24,15 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(form)
+    login(form)
+      .then(response => {
+        const auth = response.data;
+        dispatch(loginAction(auth))
+        nav('/chat')
+      })
+      .catch(error => {
+        console.log(error.response.data)
+      })
   }
 
   return (

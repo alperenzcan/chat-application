@@ -1,10 +1,12 @@
-package com.alperen.chatws.user;
+package com.alperen.chatws.auth;
 
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.alperen.chatws.user.User;
 
 public class UserDetailsImpl implements UserDetails {
 	
