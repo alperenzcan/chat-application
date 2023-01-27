@@ -1,5 +1,8 @@
 import React from 'react'
 import defaultProfile from '../assets/images/defaultProfile.png';
+import IconEmojiSmile from '../assets/icons/IconEmojiSmile'
+import IconAttach from '../assets/icons/IconAttach';
+import IconMic from '../assets/icons/IconMic';
 
 
 const MessageBoxView = () => {
@@ -9,8 +12,9 @@ const MessageBoxView = () => {
 
             <div className='mes'>
                 <div className='message-box__messages'>
+                <Message image={defaultProfile} sender='Cem' text='Scootera binek' time='09:11' />
                     <Message image={defaultProfile} sender='Tolga' text='selam beyler risk oynayak mı?' messageOwned={true} time='09:11' />
-                    <Message image={defaultProfile} sender='Cem' text='kadıköy kızlarını çekici yapan şeylerden biri de götten vermeleri' time='09:11' />
+                    <Message image={defaultProfile} sender='Cem' text='iş kurmamız lazım' time='09:11' />
                     {/* <Message image={defaultProfile} sender='Alperen' />
                     <Message image={defaultProfile} sender='Abdülrezzak' />
                     <Message image={defaultProfile} sender='Tolga' />
@@ -21,6 +25,18 @@ const MessageBoxView = () => {
                     <Message image={defaultProfile} sender='Cem' />
                     <Message image={defaultProfile} sender='Alperen' />
                     <Message image={defaultProfile} sender='Abdülrezzak' /> */}
+                </div>
+            </div>
+            <div className='message-box__input-bar'>
+                <div>
+                    <IconAttach size='20px' fill='#fff' />
+                </div>
+                <div>
+                    <IconEmojiSmile size='20px' fill='#fff' />
+                </div>
+                <input placeholder='Send a message' />
+                <div>
+                    <IconMic size='20px' fill='#fff' />
                 </div>
             </div>
 
